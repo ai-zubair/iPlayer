@@ -1,0 +1,235 @@
+/*Prevent the text size adjusting on different devices*/
+
+html {
+    text-size-adjust: 100%;
+}
+
+/*Apply a common box layout to all the elements*/
+
+* {
+    box-sizing: border-box;
+}
+
+/*-----------------BODY-------------------------*/
+
+body {
+    font-size: 1rem;
+    font-family: $defaultFont;
+    font-weight: $normal;
+    color: $text;
+    background-color: #fff;
+}
+
+.wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+/*-----------------HEADER-------------------------*/
+
+header {
+    z-index: 99;
+    position: fixed;
+    top: 0%;
+    width: 100vw;
+    background-color: $primaryColor;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0.5rem $gutter;
+}
+
+/*-----------------MAIN-------------------------*/
+
+main.album {
+    padding: 2.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    figure {
+        padding: 0.5rem 2vw;
+        img {
+            border-radius: 6px;
+            width: 100%;
+            border: 6px solid white;
+            box-shadow: 0px 0px 12px 0px $ltgrey;
+            transition: all 0.5s ease;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.02);
+            }
+        }
+        figcaption {
+            text-align: center;
+            padding: 0.2rem 0;
+        }
+    }
+}
+
+main.artist {
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    section {
+        padding: 0.5rem 0;
+        display: grid;
+        grid-template-columns: 1fr 2fr; // grid-template-rows: 1;
+        div {
+            padding: 0 0.3rem;
+        }
+        div:nth-child(1) {
+            justify-self: start;
+            img {
+                border: 6px solid white;
+                border-radius: 50%;
+                box-shadow: 0px 0px 12px 0px $ltgrey;
+                width: 100%; // clip-path: circle(50% at 50% 50%);
+                transition: all 0.5s ease;
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.02);
+                }
+            }
+        }
+        div:nth-child(2) {
+            align-self: center;
+            justify-self: start;
+        }
+    }
+}
+
+main.player {
+    display: grid;
+    grid-template-columns: 50px auto 50px;
+    grid-template-rows: auto;
+    grid-template-areas: "photo photo photo" "time time time" "startTime . endTime" "title title title" "prev play next" "dn vol up";
+    padding: 3rem 0;
+    div {
+        padding: 0.5rem 0;
+    }
+    div.photo {
+        grid-area: photo;
+        width: 84%;
+        margin: 0 8%;
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+    div.time {
+        width: 84%;
+        grid-area: time;
+        justify-self: center;
+        input {
+            margin: 0%;
+            width: 100%;
+        }
+    }
+    div.startTime {
+        justify-self: end;
+        grid-area: startTime;
+    }
+    div.endTime {
+        justify-self: start;
+        grid-area: endTime;
+    }
+    div.title {
+        justify-self: center;
+        grid-area: title;
+        span {
+            padding: 0.3rem 0;
+            display: block;
+            text-align: center;
+        }
+        span:nth-child(1) {
+            font-size: 1.5rem;
+            font-weight: $bold;
+        }
+        span:nth-child(2) {
+            font-size: 1rem;
+            font-weight: $normal;
+        }
+    }
+    div.previous {
+        font-size: 1.5rem;
+        justify-self: end;
+        grid-area: prev;
+    }
+    div.play {
+        font-size: 1.5rem;
+        justify-self: center;
+        grid-area: play;
+    }
+    div.next {
+        font-size: 1.5rem;
+        justify-self: start;
+        grid-area: next;
+    }
+    div.voldn {
+        align-self: center;
+        justify-self: center;
+        grid-area: dn;
+    }
+    div.volume {
+        grid-area: vol;
+        input[type=range] {
+            margin: 0%;
+            width: 100%;
+        }
+    }
+    div.volup {
+        align-self: center;
+        justify-self: center;
+        grid-area: up;
+    }
+}
+
+/*-----------------NAVIGATION-------------------------*/
+
+nav {
+    z-index: 99;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0%;
+    width: 100vw;
+    border-top: 1px solid $ltgrey;
+    ul {
+        display: flex;
+        flex-direction: row;
+        li {
+            flex-basis: 25%;
+            a {
+                display: block;
+                text-align: center;
+                font-size: 1.7rem;
+                padding: 0.5rem 0;
+                i {
+                    transition: all 0.5s ease;
+                    color: $ltgrey;
+                }
+            }
+            &.active {
+                background-color: $primaryColor;
+                a i {
+                    color: #fff;
+                }
+            }
+            &:hover {
+                i {
+                    transform: scale(1.2);
+                    color: $primaryColor;
+                }
+            }
+        }
+    }
+    i {
+        color: $primaryColor;
+    }
+}
+
+/*-----------------CLEARFIX-------------------------*/
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: table;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <title>Artists</title>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/all.css">
+        <script src="js/jq.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <!-- HEADER GOES HERE -->
+            <header>
+                <h1>Player</h1>
+            </header>
+            
+            <!-- MAIN GOES HERE -->
+            <main class="player">
+                    <div class="photo">
+                        <img src="images/howl650.jpg" alt="cover" sizes="(min-width: 29em) 50vw, 100vw" srcset="images/howl650.jpg 650w, images/howl750.jpg 750w, images/howl850.jpg 850w, images/howl950.jpg 950w">
+                    </div>
+                    
+                    <div class="startTime">1:25</div>
+                    <div class="time"><input type="range" name="volume" min="0" max="100" value="30"></div>
+                    <div class="endTime">-2:14</div>
+                    
+                    <div class="title">
+                        <span>Howling at the Moon</span>
+                        <span>Wolf Pack Seven</span>
+                    </div>
+                    
+                    <div class="previous"><span class="fa fa-angle-double-left"></span></div>
+                    <div class="play"><span class="fa fa-play"></span></div>
+                    <div class="next"><span class="fa fa-angle-double-right"></span></div>
+                    
+                    
+                    
+                    <div class="voldn"><span class="fa fa-volume-down"></span></div>
+                    <div class="volume"><input type="range" name="volume" min="0" max="100"></div>
+                    <div class="volup"><span class="fa fa-volume-up"></span></div>
+            </main>
+            
+            <!-- NAVIGATION GOES HERE -->
+            <nav>
+                <ul>
+                    <li id="album"><a href="index.html"><i class="fas fa-music"></i></a></li>
+                    <li id="artist"><a href="artist.html"><i class="fas fa-user"></i></a></li>
+                    <li id="song"><a href="song.html"><i class="fas fa-list"></i></a></li>
+                    <li id="search"><a href="search.html"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </body>
+</html>
